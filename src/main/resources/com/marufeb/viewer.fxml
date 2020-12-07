@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="view" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marufeb.controllers.Viewer">
+   <right>
+      <VBox fx:id="locationItems" prefHeight="400.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <VBox prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <HBox alignment="CENTER" prefHeight="145.0" prefWidth="800.0" spacing="30.0" VBox.vgrow="NEVER">
+            <ImageView fx:id="moveN" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#moveN" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <Image url="@../../down-arrow.png" />
+            </ImageView>
+         </HBox>
+         <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="145.0" prefWidth="800.0" spacing="10.0">
+            <ImageView fx:id="moveW" fitHeight="30.0" fitWidth="30.0" layoutX="375.0" layoutY="12.0" onMouseClicked="#moveW" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <Image url="@../../right-arrow.png" />
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="moveE" fitHeight="30.0" fitWidth="30.0" layoutX="395.0" layoutY="12.0" onMouseClicked="#moveE" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../right-arrow.png" />
+            </ImageView>
+         </HBox>
+         <HBox alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="145.0" prefWidth="800.0" spacing="30.0">
+            <ImageView fx:id="moveS" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#moveS" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../../down-arrow.png" />
+            </ImageView>
+         </HBox>
+      </VBox>
+   </bottom>
+   <top>
+      <HBox fx:id="backpack" prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>

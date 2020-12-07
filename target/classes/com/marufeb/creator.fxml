@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="610.0" minWidth="960.0" prefHeight="609.0" prefWidth="957.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.marufeb.controllers.Creator">
+   <left>
+      <VBox alignment="CENTER" maxWidth="200.0" minWidth="200.0" prefHeight="600.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="130.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Scene" />
+                  <TextField fx:id="location" prefHeight="40.0" prefWidth="180.0" promptText="Foulder location" VBox.vgrow="NEVER">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </TextField>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#loadScene" text="Load" />
+                        <Button mnemonicParsing="false" onAction="#newScene" text="New " />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
+            <TreeView fx:id="locationsTree" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+            <VBox fx:id="sceneControls" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addSubScene" prefWidth="100.0" text="Add" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#removeSubScene" prefWidth="100.0" text="Remove" />
+                  <Button layoutX="10.0" layoutY="37.0" mnemonicParsing="false" onAction="#save" prefWidth="100.0" text="SAVE" />
+               </children>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </VBox>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <GridPane fx:id="scenePane" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="UP" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Pane onMouseClicked="#showImagePicker" style="-fx-border-color: gray;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fx:id="upImage" fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="295.0" prefWidth="340.0" GridPane.columnIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RIGHT" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Pane onMouseClicked="#showImagePicker" style="-fx-border-color: gray;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fx:id="rightImage" fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LEFT" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Pane onMouseClicked="#showImagePicker" style="-fx-border-color: gray;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fx:id="leftImage" fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DOWN" />
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                        <Pane onMouseClicked="#showImagePicker" style="-fx-border-color: gray;" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView fx:id="downImage" fitHeight="150.0" fitWidth="200.0" layoutX="87.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                     </center>
+                  </BorderPane>
+               </children>
+               <padding>
+                  <Insets top="30.0" />
+               </padding>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+</BorderPane>
